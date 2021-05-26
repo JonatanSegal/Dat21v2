@@ -10,11 +10,13 @@ public class Main {
 
         System.out.println("Easy pancake:\n"+ep.toString());
         System.out.println();
-        System.out.println("JP fluffy pancakes:\n"+jpCake.toString());
+        System.out.println("JP fluffy pancakes:\n"+jpCake.toString()+"\n");
+
+        System.out.println("JP recipe");
+        jpCake.recipe();
 
         System.out.println();
-        jpCake.recipe();
-        System.out.println();
+        System.out.println("Easy recipe");
         ep.recipe();
     }
 }
