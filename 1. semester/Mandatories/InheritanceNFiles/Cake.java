@@ -1,6 +1,7 @@
 package InheritanceNFiles;
 
 import java.io.FileNotFoundException;
+import java.io.IOException;
 
 public abstract class Cake {
 
@@ -27,7 +28,7 @@ public abstract class Cake {
     }
 
     //Recipe method
-    public void recipe() throws FileNotFoundException {}
+    public void recipe() throws IOException {}
 
 
     //Setters and getters
