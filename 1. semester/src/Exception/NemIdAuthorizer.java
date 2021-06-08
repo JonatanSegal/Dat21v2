@@ -1,8 +1,8 @@
 package Exception;
 
-import java.awt.*;
+
 import java.util.InputMismatchException;
-import java.util.Scanner;
+
 
 public class NemIdAuthorizer {
     public boolean isValidInput(String cpr, String password){
