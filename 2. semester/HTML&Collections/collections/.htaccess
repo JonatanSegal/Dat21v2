@@ -2,7 +2,7 @@
 # https://github.com/h5bp/server-configs-apache
 
 # (!) Using `.htaccess` files slows down Apache, therefore, if you have
-# access to the main server configuration file (which is usually called
+# access to the HTMLMain server configuration file (which is usually called
 # `httpd.conf`), you should add this logic there.
 #
 # https://httpd.apache.org/docs/current/howto/htaccess.html
@@ -754,7 +754,7 @@ AddDefaultCharset utf-8
 # however, other ways of sending TRACE requests with browsers have been
 # discovered, such as using Java.
 #
-# (!) If you have access to the main server configuration file, use the
+# (!) If you have access to the HTMLMain server configuration file, use the
 #     `TraceEnable` directive instead.
 #
 # https://tools.ietf.org/html/rfc7231#section-4.3.8
@@ -1181,7 +1181,7 @@ FileETag None
 # Allow concatenation from within specific files.
 #
 # If you have the following lines in a file called, for example,
-# `main.combined.js`:
+# `HTMLMain.combined.js`:
 #
 #     <!--#include file="js/jquery.js" -->
 #     <!--#include file="js/jquery.timer.js" -->

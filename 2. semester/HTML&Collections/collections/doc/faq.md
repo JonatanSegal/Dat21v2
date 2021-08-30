@@ -15,7 +15,7 @@ table of contents](TOC.md)
 
 ## Why is the Google Analytics code at the bottom? Google recommends it be placed in the `<head>`.
 
-The main advantage of placing it in the `<head>` is that you will track the
+The HTMLMain advantage of placing it in the `<head>` is that you will track the
 user's `pageview` even if they leave the page before it has been fully loaded.
 
 Here's a handy quote from [Mathias
