@@ -7,7 +7,8 @@ public class RSSUrl {
     public static ArrayList<RSSUrl> getnews(){
         ArrayList<RSSUrl> rss = new ArrayList<>();
         rss.add(new RSSUrl(1,"https://ekstrabladet.dk/rssfeed/kendte/"));
-        rss.add(new RSSUrl(2,"https://ekstrabladet.dk/rssfeed/kendte/"));
+        rss.add(new RSSUrl(2,"https://ekstrabladet.dk/rssfeed/tv_rss/"));
+       // rss.add(new RSSUrl(3, "https://www.reddit.com/r/evangelion/.rss"));
         return rss;
     }
 
@@ -31,7 +32,4 @@ public class RSSUrl {
         this.id = id;
         this.rssurl = rssurl;
     }
-
-
-
 }

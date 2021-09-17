@@ -7,7 +7,7 @@ public class JDBCWriter {
     private Connection connection = null;
 
     public boolean setConnection(){
-        final String url ="jdbc:mysql://localhost:3306/cinemaerik?serverTimeZone=UTC";
+        final String url ="jdbc:mysql://localhost:3306/rssfeed?serverTimeZone=UTC";
         boolean res = false;
         try{
             connection = DriverManager.getConnection(url,"Fumio","K53x5nj#");
@@ -33,6 +33,48 @@ public class JDBCWriter {
             System.out.println("FEJL i count = "+ err.getMessage());
         }
         return res;
+    }
+
+    public int writeFeed(RSSUrl rssUrl, Feed feed){
+        String insstr = "INSERT INTO feeds(feedID, feedurl, title, link) value (?, ?, ?, ?)";
+        PreparedStatement preparedStatement;
+        int rowcount = 0;
+        try{
+            preparedStatement = connection.prepareStatement(insstr);
+            preparedStatement.setInt(1, rssUrl.getId());
+            preparedStatement.setString(2, rssUrl.getRssurl());
+            preparedStatement.setString(3,feed.title);
+            preparedStatement.setString(4, feed.getLink());
+
+            int ii = preparedStatement.executeUpdate();
+
+            rowcount+= ii;
+        }catch (SQLException err){
+            System.out.println("SQL fejl i writeFeed = "+err.getMessage());
+        }
+        System.out.println("Færdig med skriv feed");
+        return rowcount;
+    }
+
+    public int writeMessages(RSSUrl rssUrl, FeedMessage feedMessage){
+        String insstr = "INSERT INTO feedmessages(feedid, title, description, guid) value (?, ?, ?, ?)";
+        PreparedStatement preparedStatement;
+        int rowcount = 0;
+        try{
+            preparedStatement = connection.prepareStatement(insstr);
+            preparedStatement.setInt(1, rssUrl.getId());
+            preparedStatement.setString(2, feedMessage.getTitle());
+            preparedStatement.setString(3,feedMessage.getDescription());
+            preparedStatement.setString(4, feedMessage.getGuid());
+
+            int ii = preparedStatement.executeUpdate();
+
+            rowcount+= ii;
+        }catch (SQLException err){
+            System.out.println("SQL fejl i writeMessage = "+err.getMessage());
+        }
+        System.out.println("Færdig med skriv Message");
+        return rowcount;
     }
 
 }

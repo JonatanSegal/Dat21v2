@@ -20,8 +20,11 @@ public class JDBCMain {
                 Feed feed = parser.readFeed();
                 System.out.println(feed);
 
+                jdbcWriter.writeFeed(rssurl, feed);
+
                 for(FeedMessage msg: feed.getMessages()){
                     System.out.println(msg);
+                    jdbcWriter.writeMessages(rssurl,msg);
                 }
             }
         }
