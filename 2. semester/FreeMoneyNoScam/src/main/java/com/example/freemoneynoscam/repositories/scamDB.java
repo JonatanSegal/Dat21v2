@@ -6,7 +6,7 @@ public class scamDB {
 
     public void connect(){
         try{
-            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/free_money_no_scam","Fumio","K53x5nj#");
+            Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/DBNAME","USERNAME","PASSWORD");
             PreparedStatement psts = conn.prepareStatement("SELECT * from victims");
             ResultSet resultSet = psts.executeQuery();
             while(resultSet.next()){
