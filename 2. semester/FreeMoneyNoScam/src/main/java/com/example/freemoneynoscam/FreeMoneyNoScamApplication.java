@@ -1,6 +1,5 @@
 package com.example.freemoneynoscam;
 
-import com.example.freemoneynoscam.repositories.scamDB;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 

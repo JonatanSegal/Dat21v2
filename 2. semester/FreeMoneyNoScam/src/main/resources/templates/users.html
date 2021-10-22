@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <title>user list</title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -41,18 +41,24 @@
         </form>
     </div>
 </nav>
-<div class="container">
-    <h1>Free moneyy no scam - very easy</h1>
-    <div id="form-wrapper">
-        <form id="sign-up-form" method="POST" action="/test">
-            <label for="name">name</label>
-            <input name="user-name" id="name" type="text" required>
-            <label for="email">email</label>
-            <input name="user-mail" id="email" type="email" required>
-            <input type="submit">
-        </form>
-    </div>
-</div>
+        <div class="container">
+            <h1>Free moneyy no scam - very easy</h1>
+            <div id="form-wrapper">
+                <table>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>mail</th>
+                    </tr>
+                    <tr th:each="user : ${users}">
+                        <td class="align-middle" th:text="${user.getId()}"></td>
+                        <td class="align-middle" th:text="${user.getName()}"></td>
+                        <td class="align-middle" th:text="${user.getEmail()}"></td>
 
-</body>
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+    </body>
 </html>
