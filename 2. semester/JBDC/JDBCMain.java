@@ -7,8 +7,8 @@ public class JDBCMain {
         boolean hasCon= jdbcWriter.setConnection();
         System.out.println("Vi fik res="+hasCon);
 
-        int count = jdbcWriter.countCustomers();
-        System.out.println("test = " + count);
+        int countFeed = jdbcWriter.countTable("feeds");
+        System.out.println("Feeds count = " + countFeed);
 
         ArrayList<RSSUrl> news = RSSUrl.getnews();
 
